@@ -2,6 +2,11 @@
 
 In this project, we will be practicing object relationships in Ruby, with a particular emphasis on the has-many-through relationship.  We will be building out a domain model in which a User has a collection of RecipeCards. Each RecipeCard will store information about a Recipe a User would like to save, creating the relationship of a User having many Recipes through RecipeCards. A single Recipe can also belong to many Users.  A Recipe also has many Ingredients, while a single Ingredient can be found in many Recipes.  There are Ingredients that some Users may be allergic to.  Read through the deliverables below to begin building out the following six classes and to figure out additional information about their relationships.  (Note - a `#` symbol represents an instance method, while a `.` represents a class method.)  You may not be able to build out all methods until you have set up relationships between the classes, so it is normal to jump around a bit in the building process.  If you are confused about how the below models relate to each other, it may help to draw this out on a whiteboard before beginning to code.  
 
+Users <--> RecipieCards <-->**Recipies**
+
+**Recipies** <-->  Ingredients
+
+
 ## Testing
 
 We've provided you with a console that you can use to test your code. To enter a console session, run ruby tools/console.rb. You'll be able to test out the methods that you write here.
@@ -11,12 +16,15 @@ We've provided you with a console that you can use to test your code. To enter a
 ### `Recipe`
 Build the following methods on the Recipe class
 
-- `Recipe.all`
-should return all of the recipe instances
-- `Recipe.most_popular`
-should return the recipe instance with the highest number of users (the recipe that has the most recipe cards)
-- `Recipe#users`
-should return the user instances who have recipe cards with this recipe
+<!-- - `Recipe.all`
+should return all of the recipe instances -->
+
+<!-- - `Recipe.most_popular`
+should return the recipe instance with the highest number of users (the recipe that has the most recipe cards) -->
+
+<!-- - `Recipe#users`
+should return the user instances who have recipe cards with this recipe -->
+
 - `Recipe#ingredients`
 should return all of the ingredients in this recipe
 - `Recipe#allergens`
@@ -28,8 +36,9 @@ should take an array of ingredient instances as an argument, and associate each 
 ### `User`
 Build the following methods on the User class
 
-- `User.all`
-should return all of the user instances
+<!-- - `User.all`
+should return all of the user instances -->
+
 - `User#recipes`
 should return all of the recipes this user has recipe cards for
 - `User#add_recipe_card`
@@ -49,16 +58,20 @@ should return the recipe most recently added to the user's cookbook.
 A RecipeCard is the join between a user instance and a recipe instance.  This is a has-many-through relationship.
 Build the following methods on the RecipeCard class:  
 
-- `RecipeCard.all`
-should return all of the RecipeCard instances
-- `RecipeCard#date`
-should return the date of the entry
-- `RecipeCard#rating`
-should return the rating (an integer) a user has given their entry
-- `RecipeCard#user`
-should return the user to which the entry belongs
-- `RecipeCard#recipe`
-should return the recipe to which the entry belongs
+ <!-- `RecipeCard.all`
+should return all of the RecipeCard instances -->
+
+<!-- - `RecipeCard#date`
+should return the date of the entry -->
+
+<!-- - `RecipeCard#rating`
+should return the rating (an integer) a user has given their entry -->
+
+<!-- - `RecipeCard#user`
+should return the user to which the entry belongs -->
+
+<!-- - `RecipeCard#recipe`
+should return the recipe to which the entry belongs -->
 
 ### `Ingredient`
 Build the following methods on the Ingredient class
